@@ -40,7 +40,7 @@ int main(int argc,char *argv[])
   {
     printf("\n");
     printf("Using :./rinetd logfile inifile cmdport\n\n");
-    printf("Sample:./rinetd /tmp/rinetd.log /project/tools1/ini/rinetd.conf 4000\n\n");
+    printf("Sample:./rinetd /tmp/rinetd.log /project/tools1/ini/inetd.conf 4000\n\n");
     printf("        /project/tools1/bin/procctl 5 /project/tools1/bin/rinetd /tmp/rinetd.log /project/tools1/ini/rinetd.conf 4000\n\n");
     printf("logfile 本程序运行的日志文件名。\n");
     printf("inifile 代理服务参数配置文件。\n");

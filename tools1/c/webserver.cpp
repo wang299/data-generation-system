@@ -307,7 +307,7 @@ void _help(char *argv[])
 {
   printf("Using:/project/tools1/bin/webserver logfilename xmlbuffer\n\n");
 
-  printf("Sample:/project/tools1/bin/procctl 10 /project/tools1/bin/webserver /log/idc/webserver.log \"<connstr>scott/tiger@snorcl11g_132</connstr><charset>Simplified Chinese_China.AL32UTF8</charset><port>8080</port>\"\n\n");
+  printf("Sample:/project/tools1/bin/procctl 10 /project/tools1/bin/webserver /log/idc/webserver.log \"<connstr>scott/20020914@oracle_wyz</connstr><charset>Simplified Chinese_China.AL32UTF8</charset><port>8080</port>\"\n\n");
 
   printf("本程序是数据总线的服务端程序，为数据中心提供http协议的数据访问接口。\n");
   printf("logfilename 本程序运行的日志文件。\n");
@@ -616,7 +616,7 @@ void connpool::destroy()
   for (int ii=0;ii<m_maxconns;ii++)
   {
     m_conns[ii].conn.disconnect();             // 断开数据库连接。
-    pthread_mutex_destroy(&m_conns[ii].mutex); // 断开数据库连接。
+    pthread_mutex_destroy(&m_conns[ii].mutex); // 释放锁。
   }
 
   delete []m_conns;         // 释放数据库连接池的内存空间。

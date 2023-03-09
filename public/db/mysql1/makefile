@@ -1,20 +1,17 @@
 #########################################
-
-# mysqlÍ·ÎÄ¼þ´æ·ÅÂ·¾¶
-MYSQLINCL = -I/usr/local/mysql/include
-
-# mysql¿âÎÄ¼þ±£´æÂ·¾¶
-MYSQLLIB = -L/usr/local/mysql/lib
-
-# mysqlÁ´½Ó¿â
 MYSQLLIBS = -lmysqlclient
 
 #CFLAGS = -O2
-CFLAGS = -O2 -Wall
+
+# mysql¿¿¿¿¿¿¿
+MYSQLINCL = -I/usr/mysql/include  -I/project/public/db/mysql
+
+# mysql¿¿¿¿¿¿¿
+MYSQLLIB = -L/usr/mysql/lib
 
 CFLAGS = -g -Wno-write-strings 
 
-all:	createtable inserttable counttable updatetable deletetable selecttable filetoblob blobtofile
+all:	createtable inserttable counttable updatetable deletetable selecttable filetoblob blobtofile selecttable1
 
 createtable: createtable.cpp _mysql.h _mysql.cpp
 	g++ $(CFLAGS) -o createtable createtable.cpp $(MYSQLINCL) $(MYSQLLIB) $(MYSQLLIBS) _mysql.cpp -lm -lc
@@ -24,6 +21,9 @@ inserttable: inserttable.cpp _mysql.h _mysql.cpp
 
 selecttable: selecttable.cpp _mysql.h _mysql.cpp
 	g++ $(CFLAGS) -o selecttable selecttable.cpp $(MYSQLINCL) $(MYSQLLIB) $(MYSQLLIBS) _mysql.cpp -lm -lc
+
+selecttable1: selecttable1.cpp _mysql.h _mysql.cpp
+	g++ $(CFLAGS) -o selecttable1 selecttable1.cpp $(MYSQLINCL) $(MYSQLLIB) $(MYSQLLIBS) _mysql.cpp -lm -lc
 
 counttable: counttable.cpp _mysql.h _mysql.cpp
 	g++ $(CFLAGS) -o counttable counttable.cpp $(MYSQLINCL) $(MYSQLLIB) $(MYSQLLIBS) _mysql.cpp -lm -lc

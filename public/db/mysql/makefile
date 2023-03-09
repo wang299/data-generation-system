@@ -23,6 +23,9 @@ updatetable:updatetable.cpp _mysql.h _mysql.cpp
 selecttable:selecttable.cpp _mysql.h _mysql.cpp
 	g++ $(CFLAGS) -o selecttable selecttable.cpp $(MYSQLINCL) $(MYSQLLIB) $(MYSQLLIBS) _mysql.cpp -lm -lc
 
+selecttable1:selecttable1.cpp _mysql.h _mysql.cpp
+	g++ $(CFLAGS) -o selecttable1 selecttable1.cpp $(MYSQLINCL) $(MYSQLLIB) $(MYSQLLIBS) _mysql.cpp -lm -lc
+
 deletetable:deletetable.cpp _mysql.h _mysql.cpp
 	g++ $(CFLAGS) -o deletetable deletetable.cpp $(MYSQLINCL) $(MYSQLLIB) $(MYSQLLIBS) _mysql.cpp -lm -lc
 
